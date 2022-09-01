@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "phone": "1234567890",
+    "status": "active",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/john.svg"
+  },
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "phone": "0987654321",
+    "status": "inactive",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/jane.svg"
+  },
+  {
+    "id": 3,
+    "name": "Jonny Smith",
+    "phone": "1234567890",
+    "status": "active",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/jonny.svg"
+  },
+  {
+    "id": 4,
+    "name": "Jake Smith",
+    "phone": "0987654321",
+    "status": "inactive",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/jake.svg"
+  },
+  {
+    "id": 5,
+    "name": "Will Smith",
+    "phone": "1234567890",
+    "status": "active",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/will.svg"
+  },
+  {
+    "id": 6,
+    "name": "Jack Hughes",
+    "phone": "0987654321",
+    "status": "inactive",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/jack.svg"
+  },
+  {
+    "id": 7,
+    "name": "Leonardo DiCaprio",
+    "phone": "1234567890",
+    "status": "active",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/leonardo.svg"
+  },
+  {
+    "id": 8,
+    "name": "Tom Cruise",
+    "phone": "0987654321",
+    "status": "inactive",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/tom.svg"
+  },
+  {
+    "id": 9,
+    "name": "Tom Hanks",
+    "phone": "1234567890",
+    "status": "active",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/tom.svg"
+  },
+  {
+    "id": 10,
+    "name": "Brad Pitt",
+    "phone": "0987654321",
+    "status": "inactive",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/brad.svg"
+  },
+  {
+    "id": 11,
+    "name": "Cris Evans",
+    "phone": "1234567890",
+    "status": "active",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/chris.svg"
+  },
+  {
+    "id": 12,
+    "name": "Robert Downey Jr",
+    "phone": "0987654321",
+    "status": "inactive",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/robert.svg"
+  },
+  {
+    "id": 13,
+    "name": "Chris Hemsworth",
+    "phone": "1234567890",
+    "status": "active",
+    "avatar": "https://avatars.dicebear.com/api/adventurer/chris.svg"
+  }
+]

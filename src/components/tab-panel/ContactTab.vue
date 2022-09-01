@@ -1,6 +1,14 @@
+<script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import { useBasicStore } from "../../stores/basicStore";
+
+const store = useBasicStore();
+</script>
 <template>
   <div
     class="tab-pane"
+    :class="{ active: store.activeTab === 'contact' }"
     id="pills-contacts"
     role="tabpanel"
     aria-labelledby="pills-contacts-tab"
@@ -123,9 +131,7 @@
       <!-- Start contact lists -->
       <div class="p-4 chat-message-list chat-group-list" data-simplebar>
         <div>
-          <div class="p-3 fw-bold text-primary">
-            A
-          </div>
+          <div class="p-3 fw-bold text-primary">A</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -194,9 +200,7 @@
         <!-- end contact list A -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            C
-          </div>
+          <div class="p-3 fw-bold text-primary">C</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -234,9 +238,7 @@
         <!-- end contact list C -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            D
-          </div>
+          <div class="p-3 fw-bold text-primary">D</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -306,9 +308,7 @@
         <!-- end contact list D -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            I
-          </div>
+          <div class="p-3 fw-bold text-primary">I</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -346,9 +346,7 @@
         <!-- end contact list I -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            J
-          </div>
+          <div class="p-3 fw-bold text-primary">J</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -448,9 +446,7 @@
         <!-- end contact list J -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            M
-          </div>
+          <div class="p-3 fw-bold text-primary">M</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -550,9 +546,7 @@
         <!-- end contact list M -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            O
-          </div>
+          <div class="p-3 fw-bold text-primary">O</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -590,9 +584,7 @@
         <!-- end contact list O -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            P
-          </div>
+          <div class="p-3 fw-bold text-primary">P</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -662,9 +654,7 @@
         <!-- end contact list P -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            R
-          </div>
+          <div class="p-3 fw-bold text-primary">R</div>
 
           <ul class="list-unstyled contact-list">
             <li>
@@ -703,9 +693,7 @@
         <!-- end contact list R -->
 
         <div class="mt-3">
-          <div class="p-3 fw-bold text-primary">
-            S
-          </div>
+          <div class="p-3 fw-bold text-primary">S</div>
 
           <ul class="list-unstyled contact-list">
             <li>

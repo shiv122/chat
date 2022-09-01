@@ -1,6 +1,14 @@
+<script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import { useBasicStore } from "../../stores/basicStore";
+
+const store = useBasicStore();
+</script>
 <template>
   <div
     class="tab-pane"
+    :class="{ active: store.activeTab === 'userSetting' }"
     id="pills-setting"
     role="tabpanel"
     aria-labelledby="pills-setting-tab"
@@ -14,7 +22,7 @@
       <div class="text-center border-bottom p-4">
         <div class="mb-4 profile-user">
           <img
-            src="assets/images/users/avatar-1.jpg"
+            src="/src/assets/images/users/avatar-1.jpg"
             class="rounded-circle avatar-lg img-thumbnail"
             alt=""
           />

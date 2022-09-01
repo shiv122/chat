@@ -1,3 +1,10 @@
+<script setup>
+import { useBasicStore } from "../stores/basicStore";
+import { ref } from "vue";
+
+const store = useBasicStore();
+</script>
+
 <template>
   <div class="side-menu flex-lg-column me-lg-1 ms-lg-0">
     <!-- LOGO -->
@@ -30,6 +37,8 @@
         >
           <a
             class="nav-link"
+            :class="{ active: store.activeTab === 'profile' }"
+            @click="store.openTab('profile')"
             id="pills-user-tab"
             data-bs-toggle="pill"
             href="#pills-user"
@@ -60,7 +69,9 @@
           title="Chats"
         >
           <a
-            class="nav-link active"
+            class="nav-link"
+            :class="{ active: store.activeTab === 'chat' }"
+            @click="store.openTab('chat')"
             id="pills-chat-tab"
             data-bs-toggle="pill"
             href="#pills-chat"
@@ -93,6 +104,8 @@
         >
           <a
             class="nav-link"
+            :class="{ active: store.activeTab === 'group' }"
+            @click="store.openTab('group')"
             id="pills-groups-tab"
             data-bs-toggle="pill"
             href="#pills-groups"
@@ -125,6 +138,8 @@
         >
           <a
             class="nav-link"
+            :class="{ active: store.activeTab === 'contact' }"
+            @click="store.openTab('contact')"
             id="pills-contacts-tab"
             data-bs-toggle="pill"
             href="#pills-contacts"
@@ -157,6 +172,8 @@
         >
           <a
             class="nav-link"
+            :class="{ active: store.activeTab === 'userSetting' }"
+            @click="store.openTab('userSetting')"
             id="pills-setting-tab"
             data-bs-toggle="pill"
             href="#pills-setting"
@@ -281,4 +298,3 @@
     <!-- Side menu user -->
   </div>
 </template>
-<script setup></script>

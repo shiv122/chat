@@ -1,6 +1,14 @@
+<script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import { useBasicStore } from "../../stores/basicStore";
+
+const store = useBasicStore();
+</script>
 <template>
   <div
     class="tab-pane"
+    :class="{ active: store.activeTab === 'group' }"
     id="pills-groups"
     role="tabpanel"
     aria-labelledby="pills-groups-tab"
@@ -88,11 +96,9 @@
                           <h5 class="font-size-15 mb-0">Contacts</h5>
                         </div>
                         <div class="card-body p-2">
-                          <div data-simplebar style="max-height: 150px;">
+                          <div data-simplebar style="max-height: 150px">
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                A
-                              </div>
+                              <div class="p-3 fw-bold text-primary">A</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>
@@ -129,9 +135,7 @@
                             </div>
 
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                C
-                              </div>
+                              <div class="p-3 fw-bold text-primary">C</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>
@@ -152,9 +156,7 @@
                             </div>
 
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                D
-                              </div>
+                              <div class="p-3 fw-bold text-primary">D</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>
@@ -175,9 +177,7 @@
                             </div>
 
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                I
-                              </div>
+                              <div class="p-3 fw-bold text-primary">I</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>
@@ -198,9 +198,7 @@
                             </div>
 
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                J
-                              </div>
+                              <div class="p-3 fw-bold text-primary">J</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>
@@ -251,9 +249,7 @@
                             </div>
 
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                M
-                              </div>
+                              <div class="p-3 fw-bold text-primary">M</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>
@@ -289,9 +285,7 @@
                             </div>
 
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                P
-                              </div>
+                              <div class="p-3 fw-bold text-primary">P</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>
@@ -312,9 +306,7 @@
                             </div>
 
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                R
-                              </div>
+                              <div class="p-3 fw-bold text-primary">R</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>
@@ -335,9 +327,7 @@
                             </div>
 
                             <div>
-                              <div class="p-3 fw-bold text-primary">
-                                S
-                              </div>
+                              <div class="p-3 fw-bold text-primary">S</div>
 
                               <ul class="list-unstyled contact-list">
                                 <li>

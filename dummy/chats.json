@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "message": "Hello John",
+    "from": {
+      "id": 2,
+      "name": "Jane"
+    },
+    "to": {
+      "id": 1,
+      "name": "John"
+    },
+    "created_at": "2019-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "message": "Hello Jane",
+    "from": {
+      "id": 1,
+      "name": "John"
+    },
+    "to": {
+      "id": 2,
+      "name": "Jane"
+    },
+    "created_at": "2019-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "message": "what's up?",
+    "from": {
+      "id": 2,
+      "name": "Jane"
+    },
+    "to": {
+      "id": 1,
+      "name": "John"
+    },
+    "created_at": "2019-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "message": "nothing much",
+    "from": {
+      "id": 3,
+      "name": "John"
+    },
+    "to": {
+      "id": 1,
+      "name": "Jane"
+    },
+    "created_at": "2019-01-01T00:00:00.000Z"
+  }
+]

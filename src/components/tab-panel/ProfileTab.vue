@@ -1,6 +1,14 @@
+<script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import { useBasicStore } from "../../stores/basicStore";
+
+const store = useBasicStore();
+</script>
 <template>
   <div
     class="tab-pane"
+    :class="{ active: store.activeTab === 'profile' }"
     id="pills-user"
     role="tabpanel"
     aria-labelledby="pills-user-tab"
