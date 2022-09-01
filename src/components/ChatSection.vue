@@ -1,9 +1,26 @@
 <script setup>
 import { useChatStore } from "/src/stores/chatStore.js";
-import { ref, computed } from "vue";
+import { ref, computed, nextTick } from "vue";
 const store = useChatStore();
 const chats = ref(computed(() => store.messages()));
 const selectedUser = computed(() => store.selected_chat);
+
+const scrollToBottom = () => {
+  let chatContent = document.querySelector(
+    ".chat-conversation .simplebar-content-wrapper"
+  );
+  chatContent.scrollTop = chatContent.scrollHeight;
+};
+const sendMessage = (event) => {
+  const message = event.target.elements.message.value;
+  if (message) {
+    store.sendMessage(message);
+    event.target.elements.message.value = "";
+    nextTick().then(() => {
+      scrollToBottom();
+    });
+  }
+};
 </script>
 
 <template>
@@ -202,11 +219,13 @@ const selectedUser = computed(() => store.selected_chat);
 
         <!-- start chat input section -->
         <div class="chat-input-section p-3 p-lg-4 border-top mb-0">
-          <form>
+          <form @submit.prevent="sendMessage">
             <div class="row g-0">
               <div class="col">
                 <input
                   type="text"
+                  name="message"
+                  ref="message"
                   class="form-control form-control-lg bg-light border-light"
                   placeholder="Enter Message..."
                 />
@@ -621,3 +640,10 @@ const selectedUser = computed(() => store.selected_chat);
     </div>
   </div>
 </template>
+
+<style scoped>
+.conversation-list {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+</style>
