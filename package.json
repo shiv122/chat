@@ -12,6 +12,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "pinia": "^2.0.17",
+    "simplebar-vue": "^1.6.9",
+    "swiper": "^8.3.2",
     "vue": "^3.2.37"
   },
   "devDependencies": {

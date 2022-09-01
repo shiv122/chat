@@ -32,81 +32,88 @@
 
       <!-- Start user status -->
       <div class="px-4 pb-4" dir="ltr">
-        <div class="owl-carousel owl-theme" id="user-status-carousel">
-          <div class="item">
-            <a href="#" class="user-status-box">
-              <div class="avatar-xs mx-auto d-block chat-user-img online">
-                <img
-                  src="assets/images/users/avatar-2.jpg"
-                  alt="user-img"
-                  class="img-fluid rounded-circle"
-                />
-                <span class="user-status"></span>
-              </div>
+        <swiper :slides-per-view="4" :space-between="10">
+          <swiper-slide>
+            <div class="item">
+              <a href="#" class="user-status-box">
+                <div class="avatar-xs mx-auto d-block chat-user-img online">
+                  <img
+                    src="/src/assets/images/users/avatar-2.jpg"
+                    alt="user-img"
+                    class="img-fluid rounded-circle"
+                  />
+                  <span class="user-status"></span>
+                </div>
 
-              <h5 class="font-size-13 text-truncate mt-3 mb-1">Patrick</h5>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#" class="user-status-box">
-              <div class="avatar-xs mx-auto d-block chat-user-img online">
-                <img
-                  src="assets/images/users/avatar-4.jpg"
-                  alt="user-img"
-                  class="img-fluid rounded-circle"
-                />
-                <span class="user-status"></span>
-              </div>
+                <h5 class="font-size-13 text-truncate mt-3 mb-1">Patrick</h5>
+              </a>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="item">
+              <a href="#" class="user-status-box">
+                <div class="avatar-xs mx-auto d-block chat-user-img online">
+                  <img
+                    src="/src/assets/images/users/avatar-4.jpg"
+                    alt="user-img"
+                    class="img-fluid rounded-circle"
+                  />
+                  <span class="user-status"></span>
+                </div>
 
-              <h5 class="font-size-13 text-truncate mt-3 mb-1">Doris</h5>
-            </a>
-          </div>
+                <h5 class="font-size-13 text-truncate mt-3 mb-1">Doris</h5>
+              </a>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="item">
+              <a href="#" class="user-status-box">
+                <div class="avatar-xs mx-auto d-block chat-user-img online">
+                  <img
+                    src="/src/assets/images/users/avatar-5.jpg"
+                    alt="user-img"
+                    class="img-fluid rounded-circle"
+                  />
+                  <span class="user-status"></span>
+                </div>
 
-          <div class="item">
-            <a href="#" class="user-status-box">
-              <div class="avatar-xs mx-auto d-block chat-user-img online">
-                <img
-                  src="assets/images/users/avatar-5.jpg"
-                  alt="user-img"
-                  class="img-fluid rounded-circle"
-                />
-                <span class="user-status"></span>
-              </div>
+                <h5 class="font-size-13 text-truncate mt-3 mb-1">Emily</h5>
+              </a>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="item">
+              <a href="#" class="user-status-box">
+                <div class="avatar-xs mx-auto d-block chat-user-img online">
+                  <img
+                    src="/src/assets/images/users/avatar-6.jpg"
+                    alt="user-img"
+                    class="img-fluid rounded-circle"
+                  />
+                  <span class="user-status"></span>
+                </div>
 
-              <h5 class="font-size-13 text-truncate mt-3 mb-1">Emily</h5>
-            </a>
-          </div>
+                <h5 class="font-size-13 text-truncate mt-3 mb-1">Steve</h5>
+              </a>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="item">
+              <a href="#" class="user-status-box">
+                <div class="avatar-xs mx-auto d-block chat-user-img online">
+                  <span
+                    class="avatar-title rounded-circle bg-soft-primary text-primary"
+                  >
+                    T
+                  </span>
+                  <span class="user-status"></span>
+                </div>
 
-          <div class="item">
-            <a href="#" class="user-status-box">
-              <div class="avatar-xs mx-auto d-block chat-user-img online">
-                <img
-                  src="assets/images/users/avatar-6.jpg"
-                  alt="user-img"
-                  class="img-fluid rounded-circle"
-                />
-                <span class="user-status"></span>
-              </div>
-
-              <h5 class="font-size-13 text-truncate mt-3 mb-1">Steve</h5>
-            </a>
-          </div>
-
-          <div class="item">
-            <a href="#" class="user-status-box">
-              <div class="avatar-xs mx-auto d-block chat-user-img online">
-                <span
-                  class="avatar-title rounded-circle bg-soft-primary text-primary"
-                >
-                  T
-                </span>
-                <span class="user-status"></span>
-              </div>
-
-              <h5 class="font-size-13 text-truncate mt-3 mb-1">Teresa</h5>
-            </a>
-          </div>
-        </div>
+                <h5 class="font-size-13 text-truncate mt-3 mb-1">Teresa</h5>
+              </a>
+            </div>
+          </swiper-slide>
+        </swiper>
         <!-- end user status carousel -->
       </div>
       <!-- end user status -->
@@ -122,7 +129,7 @@
                 <div class="d-flex">
                   <div class="chat-user-img online align-self-center me-3 ms-0">
                     <img
-                      src="assets/images/users/avatar-2.jpg"
+                      src="/src/assets/images/users/avatar-2.jpg"
                       class="rounded-circle avatar-xs"
                       alt=""
                     />
@@ -147,7 +154,7 @@
                 <div class="d-flex">
                   <div class="chat-user-img away align-self-center me-3 ms-0">
                     <img
-                      src="assets/images/users/avatar-3.jpg"
+                      src="/src/assets/images/users/avatar-3.jpg"
                       class="rounded-circle avatar-xs"
                       alt=""
                     />
@@ -196,7 +203,7 @@
                 <div class="d-flex">
                   <div class="chat-user-img online align-self-center me-3 ms-0">
                     <img
-                      src="assets/images/users/avatar-4.jpg"
+                      src="/src/assets/images/users/avatar-4.jpg"
                       class="rounded-circle avatar-xs"
                       alt=""
                     />
@@ -242,7 +249,7 @@
                 <div class="d-flex">
                   <div class="chat-user-img away align-self-center me-3 ms-0">
                     <img
-                      src="assets/images/users/avatar-6.jpg"
+                      src="/src/assets/images/users/avatar-6.jpg"
                       class="rounded-circle avatar-xs"
                       alt=""
                     />
@@ -321,7 +328,7 @@
                 <div class="d-flex">
                   <div class="chat-user-img away align-self-center me-3 ms-0">
                     <img
-                      src="assets/images/users/avatar-7.jpg"
+                      src="/src/assets/images/users/avatar-7.jpg"
                       class="rounded-circle avatar-xs"
                       alt=""
                     />
@@ -367,7 +374,7 @@
                 <div class="d-flex">
                   <div class="chat-user-img away align-self-center me-3 ms-0">
                     <img
-                      src="assets/images/users/avatar-8.jpg"
+                      src="/src/assets/images/users/avatar-8.jpg"
                       class="rounded-circle avatar-xs"
                       alt=""
                     />
@@ -416,3 +423,9 @@
     <!-- Start chats content -->
   </div>
 </template>
+
+<script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+import "swiper/css";
+</script>
