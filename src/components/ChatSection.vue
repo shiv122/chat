@@ -62,6 +62,10 @@ const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text);
   toaster.show(`Copied to clipboard`);
 };
+
+const deleteMessage = (e) => {
+  e.target.closest("li").remove();
+};
 </script>
 
 <template>
@@ -185,11 +189,16 @@ const copyToClipboard = (text) => {
                         <div class="dropdown-menu">
                           <a
                             class="dropdown-item"
-                            v-on:click="copyToClipboard(chat.message)"
+                            @click="copyToClipboard(chat.message)"
                             href="#"
                             >Copy</a
                           >
-                          <a class="dropdown-item" href="#">Delete </a>
+                          <a
+                            class="dropdown-item"
+                            @click="deleteMessage"
+                            href="#"
+                            >Delete
+                          </a>
                         </div>
                       </div>
                     </div>

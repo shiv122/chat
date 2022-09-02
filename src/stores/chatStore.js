@@ -33,7 +33,8 @@ export const useChatStore = defineStore({
                 "message": message,
                 "created_at": new Date().toDateString(),
             });
-        }
+        },
+
 
 
     },
