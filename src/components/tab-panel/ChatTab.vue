@@ -82,7 +82,10 @@ const activeUsers = ref(computed(() => userStore.activeUsers));
 
         <div class="chat-message-list px-2" data-simplebar>
           <ul class="list-unstyled chat-list chat-user-list">
-            <li v-for="user in userStore.users">
+            <li
+              v-for="user in userStore.users"
+              :class="chatStore.selected_chat.id === user.id ? 'active' : ''"
+            >
               <a href="#" @click="chatStore.selectChat(user)">
                 <div class="d-flex">
                   <div

@@ -5,9 +5,10 @@ import "./assets/main.css";
 import "./assets/css/bootstrap.min.css";
 import "./assets/css/app.min.css";
 import "./assets/libs/simplebar/simplebar.min.js";
-
+import VueCookies from 'vue-cookies';
 const app = createApp(App);
 
 app.use(createPinia());
+app.use(VueCookies);
 
 app.mount("#app");

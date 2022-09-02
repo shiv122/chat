@@ -8,9 +8,12 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vueuse/core": "^9.1.1",
     "pinia": "^2.0.17",
     "swiper": "^8.3.2",
-    "vue": "^3.2.37"
+    "universal-cookie": "^4.0.4",
+    "vue": "^3.2.37",
+    "vue-cookies": "^1.8.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
