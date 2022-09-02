@@ -2,8 +2,13 @@
 import { useChatStore } from "/src/stores/chatStore.js";
 import { ref, computed, nextTick } from "vue";
 import { OnLongPress } from "@vueuse/components";
+import { createToaster } from "@meforma/vue-toaster";
 const store = useChatStore();
 const chats = ref(computed(() => store.messages()));
+const toaster = createToaster({
+  position: "bottom-right",
+  timeout: 1000,
+});
 const selectedUser = computed(() => store.selected_chat);
 
 const scrollToBottom = () => {
@@ -33,6 +38,29 @@ const onLongPressCallbackComponent = (e) => {
   //add pressed span in chat message
 
   e.target.innerHTML += '<span class="pressed-span">...</span>';
+};
+
+const showOptions = (e) => {
+  e.target
+    .closest(".dropdown")
+    .querySelector(".dropdown-menu")
+    .classList.add("show");
+};
+
+const hideOptions = (e) => {
+  //call function after 1 second
+  setTimeout(() => {
+    e.target
+      .closest(".dropdown")
+      .querySelector(".dropdown-menu")
+      .classList.remove("show");
+  }, 100);
+};
+
+const copyToClipboard = (text) => {
+  console.log("copy to clipboard", text);
+  navigator.clipboard.writeText(text);
+  toaster.show(`Copied to clipboard`);
 };
 </script>
 
@@ -124,6 +152,45 @@ const onLongPressCallbackComponent = (e) => {
                             chat.created_at
                           }}</span>
                         </p>
+                      </div>
+                      <div class="dropdown align-self-start">
+                        <a
+                          class="dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          @click="showOptions"
+                          @blur="hideOptions"
+                        >
+                          <i>
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              data-prefix="fa-light"
+                              data-icon="ellipsis-vertical"
+                              class="svg-inline--fa fa-ellipsis-vertical fa-w-4"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 128 512"
+                            >
+                              <path
+                                d="M64 128c17.67 0 32-14.33 32-32s-14.33-32-32-32C46.33 64 32 78.33 32 96S46.33 128 64 128zM64 224C46.33 224 32 238.3 32 256s14.33 32 32 32c17.67 0 32-14.33 32-32S81.67 224 64 224zM64 384c-17.67 0-32 14.33-32 32s14.33 32 32 32c17.67 0 32-14.33 32-32S81.67 384 64 384z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </i>
+                        </a>
+                        <div class="dropdown-menu">
+                          <a
+                            class="dropdown-item"
+                            v-on:click="copyToClipboard(chat.message)"
+                            href="#"
+                            >Copy</a
+                          >
+                          <a class="dropdown-item" href="#">Delete </a>
+                        </div>
                       </div>
                     </div>
                   </div>
