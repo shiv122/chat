@@ -31,7 +31,7 @@ export const useChatStore = defineStore({
                     "name": this.selected_chat.name,
                 },
                 "message": message,
-                "time": new Date().toDateString(),
+                "created_at": new Date().toDateString(),
             });
         }
 

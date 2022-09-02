@@ -1,6 +1,7 @@
 <script setup>
 import { useChatStore } from "/src/stores/chatStore.js";
 import { ref, computed, nextTick } from "vue";
+import { OnLongPress } from "@vueuse/components";
 const store = useChatStore();
 const chats = ref(computed(() => store.messages()));
 const selectedUser = computed(() => store.selected_chat);
@@ -21,8 +22,18 @@ const sendMessage = (event) => {
     });
   }
 };
-
 const showProfile = ref(false);
+//
+
+const longPressedComponent = ref(false);
+
+const onLongPressCallbackComponent = (e) => {
+  longPressedComponent.value = true;
+  // console.log("long pressed", e);
+  //add pressed span in chat message
+
+  e.target.innerHTML += '<span class="pressed-span">...</span>';
+};
 </script>
 
 <template>
@@ -87,120 +98,7 @@ const showProfile = ref(false);
                   </div>
                 </div>
               </div>
-              <div class="col-sm-8 col-4">
-                <ul class="list-inline user-chat-nav text-end mb-0">
-                  <li class="list-inline-item">
-                    <div class="dropdown">
-                      <button
-                        class="btn nav-btn dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <i class="ri-search-line"></i>
-                      </button>
-                      <div
-                        class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-md"
-                      >
-                        <div class="search-box p-2">
-                          <input
-                            type="text"
-                            class="form-control bg-light border-0"
-                            placeholder="Search.."
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li
-                    class="list-inline-item d-none d-lg-inline-block me-2 ms-0"
-                  >
-                    <button
-                      type="button"
-                      class="btn nav-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#audiocallModal"
-                    >
-                      <i class="ri-phone-line"></i>
-                    </button>
-                  </li>
-
-                  <li
-                    class="list-inline-item d-none d-lg-inline-block me-2 ms-0"
-                  >
-                    <button
-                      type="button"
-                      class="btn nav-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#videocallModal"
-                    >
-                      <i class="ri-vidicon-line"></i>
-                    </button>
-                  </li>
-
-                  <li
-                    class="list-inline-item d-none d-lg-inline-block me-2 ms-0"
-                  >
-                    <button type="button" class="btn nav-btn user-profile-show">
-                      <i class="ri-user-2-line"></i>
-                    </button>
-                  </li>
-
-                  <li class="list-inline-item">
-                    <div class="dropdown">
-                      <button
-                        class="btn nav-btn dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <i class="ri-more-fill"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-end">
-                        <a
-                          class="dropdown-item d-block d-lg-none user-profile-show"
-                          href="#"
-                          >View profile
-                          <i class="ri-user-2-line float-end text-muted"></i
-                        ></a>
-                        <a
-                          class="dropdown-item d-block d-lg-none"
-                          href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#audiocallModal"
-                          >Audio
-                          <i class="ri-phone-line float-end text-muted"></i
-                        ></a>
-                        <a
-                          class="dropdown-item d-block d-lg-none"
-                          href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#videocallModal"
-                          >Video
-                          <i class="ri-vidicon-line float-end text-muted"></i
-                        ></a>
-                        <a class="dropdown-item" href="#"
-                          >Archive
-                          <i class="ri-archive-line float-end text-muted"></i
-                        ></a>
-                        <a class="dropdown-item" href="#"
-                          >Muted
-                          <i
-                            class="ri-volume-mute-line float-end text-muted"
-                          ></i
-                        ></a>
-                        <a class="dropdown-item" href="#"
-                          >Delete
-                          <i class="ri-delete-bin-line float-end text-muted"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <div class="col-sm-8 col-4"></div>
             </div>
           </div>
           <!-- end chat user head -->
@@ -208,10 +106,12 @@ const showProfile = ref(false);
           <!-- start chat conversation -->
           <div class="chat-conversation p-3 p-lg-4" data-simplebar="init">
             <ul class="list-unstyled mb-0">
-              <li
-                v-for="chat in chats"
+              <OnLongPress
+                as="li"
                 class="fade-right"
+                v-for="chat in chats"
                 :class="{ right: chat.from.id === store.my_id }"
+                @trigger="onLongPressCallbackComponent"
               >
                 <div class="conversation-list">
                   <div class="user-chat-content">
@@ -228,7 +128,7 @@ const showProfile = ref(false);
                     </div>
                   </div>
                 </div>
-              </li>
+              </OnLongPress>
             </ul>
           </div>
           <!-- end chat conversation end -->
@@ -433,16 +333,14 @@ const showProfile = ref(false);
 }
 .fade-right {
   animation-name: fade-right;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 @keyframes fade-right {
   0% {
-    right: -300px;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
-    right: 0;
     opacity: 1;
   }
 }
